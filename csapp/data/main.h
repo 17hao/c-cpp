@@ -10,3 +10,13 @@
 void show_bytes_test(int val);
 
 void inplace_swap(int *x, int *y);
+
+void pointerArray();
+
+int myStrlen(char *s);
+
+void myStrCpy_V1(char *s, char *t);
+
+void myStrCpy_V2(char *s, char *t);
+
+void myStrCpy_V3(char *s, char *t);
