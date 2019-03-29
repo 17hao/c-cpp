@@ -3,4 +3,4 @@ project(ProgramInC C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(ProgramInC csapp/data/main.c csapp/data/show-bytes.c csapp/data/swap.c LanguageC/PointerAndArray/code1.c LanguageC/PointerAndArray/code2.c LinkAndLoad/SimpleSection.c)
+add_executable(ProgramInC main.c csapp/data/show-bytes.c csapp/data/swap.c LanguageC/PointerAndArray/code1.c LanguageC/PointerAndArray/code2.c LinkAndLoad/SimpleSection.c)
