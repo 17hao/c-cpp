@@ -21,4 +21,6 @@ void myStrCpy_V2(char *s, char *t);
 
 void myStrCpy_V3(char *s, char *t);
 
-void reversePrintNum(int n);
+void printNum(int n);
+
+void qsort(int n[], int left, int right);

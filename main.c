@@ -17,5 +17,10 @@ int main() {
     //myStrCpy_V2(&s, &t);
     myStrCpy_V3(&s, &t);
     printf("%s\n", s);
-    reversePrintNum(123);
+    printNum(1234);
+    int array[] = {3, 2, 5, 4, 7, 9, 1};
+    qsort(array, 0, 7);
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", array[i]);
+    }
 }
