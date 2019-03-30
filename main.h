@@ -20,3 +20,5 @@ void myStrCpy_V1(char *s, char *t);
 void myStrCpy_V2(char *s, char *t);
 
 void myStrCpy_V3(char *s, char *t);
+
+void reversePrintNum(int n);

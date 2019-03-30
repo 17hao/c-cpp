@@ -17,4 +17,5 @@ int main() {
     //myStrCpy_V2(&s, &t);
     myStrCpy_V3(&s, &t);
     printf("%s\n", s);
+    reversePrintNum(123);
 }
