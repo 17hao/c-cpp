@@ -13,9 +13,9 @@ void pointerArray();
 
 int myStrlen(char *s);
 
-void myStrCpy_V1(char *s, char *t);
+//void myStrCpy_V1(char *s, char *t);
 
-void myStrCpy_V2(char *s, char *t);
+//void myStrCpy_V2(char *s, char *t);
 
 void myStrCpy_V3(char *s, char *t);
 
@@ -23,4 +23,13 @@ void printNum(int n);
 
 void qsort(int n[], int left, int right);
 
+struct point {
+    int x;
+    int y;
+};
+
+typedef struct person {
+    int age;
+    char *String;
+} PersonalInfo;
 #endif //PROGRAMINC_MAIN_H
