@@ -5,8 +5,6 @@
 #ifndef PROGRAMINC_MAIN_H
 #define PROGRAMINC_MAIN_H
 
-#endif //PROGRAMINC_MAIN_H
-
 void show_bytes_test(int val);
 
 void inplace_swap(int *x, int *y);
@@ -24,3 +22,5 @@ void myStrCpy_V3(char *s, char *t);
 void printNum(int n);
 
 void qsort(int n[], int left, int right);
+
+#endif //PROGRAMINC_MAIN_H

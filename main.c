@@ -15,7 +15,7 @@ int main() {
     char *t = "string";
     //myStrCpy_V1(&s, &t);
     //myStrCpy_V2(&s, &t);
-    myStrCpy_V3(&s, &t);
+    myStrCpy_V3((char *) &s, &t);
     printf("%s\n", s);
     printNum(1234);
     int array[] = {3, 2, 5, 4, 7, 9, 1};
