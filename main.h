@@ -7,7 +7,7 @@
 
 void show_bytes_test(int val);
 
-void inplace_swap(int *x, int *y);
+void situSwap(int *x, int *y);
 
 void pointerArray();
 
@@ -32,4 +32,9 @@ typedef struct person {
     int age;
     char *String;
 } PersonalInfo;
+
+void quickSort(int left, int right, int arr[]);
+
+int kThLargest(int k, int *arr);
+
 #endif //PROGRAMINC_MAIN_H

@@ -9,7 +9,7 @@ int main() {
     /* 用指针原地交换2个数 */
     int m = 1;
     int n = 2;
-    inplace_swap(&m, &n);
+    situSwap(&m, &n);
     printf("m = %d n = %d\n", m, n);
 
     /* 指针和数组的关系 */
@@ -43,5 +43,12 @@ int main() {
     typedef char *string; /* 给char*(char类型的指针)赋予别名string */
     string str = "sqh";
     PersonalInfo pif = {10, str};
-    printf("%d,%s", pif.age, pif.String);
+    printf("%d,%s\n", pif.age, pif.String);
+
+    /* 数组中第K大的数 */
+    int arr[] = {3, 2, 5, 4, 7, 9, 1};
+    quickSort(0, 7, arr);
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", arr[i]);
+    }
 }
