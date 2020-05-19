@@ -2,6 +2,6 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("%d\n", getpagesize());
-    printf("%d", sysconf(_SC_PAGESIZE));
+  printf("%d\n", getpagesize());
+  printf("%d", sysconf(_SC_PAGESIZE));
 }
