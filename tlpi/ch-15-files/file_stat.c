@@ -1,7 +1,3 @@
-#define _BSD_SOURCE /* get major() and minor() from <sys/types.h> */
-#define _POSIX_C_SOURCE 1L
-
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <time.h>
 #include <stdio.h>
@@ -46,11 +42,11 @@ static void display_file_state(const struct stat *sb) {
 
   printf("512 blocks allocated:      %lld\n", (long long) sb->st_blocks);
 
-  printf("Last file access:          %s\n", ctime(&sb->st_atime));
+  printf("Last file access:          %s", ctime(&sb->st_atime));
 
-  printf("Last file modified:        %s\n", ctime(&sb->st_mtime));
+  printf("Last file modified:        %s", ctime(&sb->st_mtime));
 
-  printf("Last status change:        %s\n", ctime(&sb->st_ctime));
+  printf("Last status change:        %s", ctime(&sb->st_ctime));
 }
 
 int main(int argc, char *argv[]) {
