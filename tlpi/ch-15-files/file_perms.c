@@ -4,7 +4,7 @@
 
 #define STR_LEN sizeof("rwxrwxrwx")
 
-char *file_perm_str(mode_t perm, int flag) {
+char *file_perms_str(mode_t perm, int flag) {
   static char str[STR_LEN];
   snprintf(str, STR_LEN, "%c%c%c%c%c%c%c%c%c",
            (perm & S_IRUSR) ? 'r' : '-',
