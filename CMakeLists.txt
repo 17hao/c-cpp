@@ -4,10 +4,12 @@ set(CMAKE_C_STANDARD 99)
 
 file(GLOB_RECURSE kr_source k&r/*.c k&r/*.h)
 file(GLOB_RECURSE tlpi_source tlpi/*.c tlpi/*.h)
+file(GLOB_RECURSE misc_source misc/*.c misc/*.h)
 #add_subdirectory(k&r)
 #add_subdirectory(tlpi)
 #
 add_executable(c-program
         ${kr_source}
         ${tlpi_source}
+        ${misc_source}
         )
