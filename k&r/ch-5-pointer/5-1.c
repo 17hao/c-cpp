@@ -7,7 +7,7 @@ int main() {
   ip = &x; // &x将x的地址赋值给ip, 未带*表示ip是一个地址(一个变量), 带了*表示所指向地址的值
   printf("pointer ip points to %d\n", x);
 
-  y = *ip;
+  y = *ip; // 将指针ip所指地址的值赋给y
   *ip = 0;
   printf("x, y = %d, %d\n", *ip, y);
 

@@ -17,7 +17,7 @@ int main() {
   sleep(5);
 
   pid = wait(&status);
-  fprintf(stderr, "[%d] Child process %d exited with status %d\n", getpid(), pid, WEXITSTATUS(status));
+  fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(), pid, WEXITSTATUS(status));
 
   exit(0);
 }

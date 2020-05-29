@@ -1,0 +1,24 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main() {
+  pid_t pid;
+
+  pid = fork();
+
+  if (pid == -1) {
+    exit(-1);
+  }
+
+  if (pid == 0) {
+    printf("I'm child process - pid: %d - parent pid: %d\n", getpid(), getppid());
+    sleep(5);
+    printf("After sleep pid: %d - parent pid: %d\n", getpid(), getppid());
+    exit(0);
+  } else {
+    sleep(1);
+    printf("I'm parent process - pid: %d - parent pid: %d\n", getpid(), getppid());
+    exit(0);
+  }
+}
