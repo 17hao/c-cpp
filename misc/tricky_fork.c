@@ -5,8 +5,7 @@
 /* https://coolshell.cn/articles/7965.html  */
 
 int main() {
-  int i;
-  for (i = 0; i < 2; i++) {
+  for (int i = 0; i < 2; i++) {
     fork();
     //printf("-");
     printf("-\n");
