@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
       exit(-1);
     }
 
-    if (fd > FD_SETSIZE) {
+    if (fd >= FD_SETSIZE) {
       printf("file descriptor exceeds limit\n");
       exit(-1);
     }
