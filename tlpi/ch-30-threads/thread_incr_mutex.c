@@ -1,3 +1,5 @@
+/* gcc -pthread filename */
+
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,12 +35,12 @@ int main(int argc, char *argv[]) {
   int loops = argc > 1 ? atoi(argv[1]) : 10000;
   int s;
 
-  s = pthread_create(&t1, NULL, prod_thread, &loops);
+  s = pthread_create(&t1, NULL, thread_func, &loops);
   if (s != 0) {
     printf("pthread_create()");
     exit(-1);
   }
-  s = pthread_create(&t2, NULL, prod_thread, &loops);
+  s = pthread_create(&t2, NULL, thread_func, &loops);
   if (s != 0) {
     printf("pthread_create()");
     exit(-1);
