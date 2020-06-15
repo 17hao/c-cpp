@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "misc.h"
 
 static struct point *create_p() {

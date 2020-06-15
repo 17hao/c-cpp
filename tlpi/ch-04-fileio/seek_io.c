@@ -1,9 +1,9 @@
+#include <ctype.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
-#include <ctype.h>
 
 /**
  * Demonstrate of lseek() and file I/O system calls.
@@ -20,10 +20,10 @@ int main(int argc, char *argv[]) {
     exit(-1);
   }
 
-  int fd = open(argv[1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+  int fd =
+      open(argv[1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
   printf("fd: %d\n", fd);
-  if (fd == -1)
-    exit(-2);
+  if (fd == -1) exit(-2);
 
   for (int ap = 2; ap < argc; ap++) {
     switch (argv[ap][0]) {
@@ -31,13 +31,11 @@ int main(int argc, char *argv[]) {
       case 'R': /* Display bytes at current offset in hex */
         len = strtol(&argv[ap][1], &endptr, 10);
         buf = malloc(len);
-        if (buf == NULL)
-          exit(-1);
+        if (buf == NULL) exit(-1);
 
         read_num = read(fd, buf, len);
 
-        if (read_num == -1)
-          exit(-1);
+        if (read_num == -1) exit(-1);
 
         if (read_num == 0) {
           printf("%s: end-of-file\n", argv[ap]);
@@ -56,22 +54,19 @@ int main(int argc, char *argv[]) {
         break;
       case 'w': /* Write string at current offset */
         write_num = write(fd, &argv[ap][1], strlen(&argv[ap][1]));
-        if (write_num == -1)
-          exit(-1);
+        if (write_num == -1) exit(-1);
 
-        printf("%s wrote %ld bytes\n", argv[ap], (long) write_num);
+        printf("%s wrote %ld bytes\n", argv[ap], (long)write_num);
         break;
       case 's': /* Change file offset */
         offset = strtol(&argv[ap][1], &endptr, 10);
-        if (lseek(fd, offset, SEEK_SET) == -1)
-          exit(-1);
+        if (lseek(fd, offset, SEEK_SET) == -1) exit(-1);
         printf("%s: seek succeeded\n", argv[ap]);
         break;
     }
   }
 
-  if (close(fd) == -1)
-    exit(-3);
+  if (close(fd) == -1) exit(-3);
 
   exit(EXIT_SUCCESS);
 }

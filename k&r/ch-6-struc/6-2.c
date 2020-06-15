@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 #include <string.h>
 
 /**
@@ -8,25 +8,13 @@
 struct key {
   char *word;
   int count;
-} keytab[] = {
-    "auto", 0,
-    "break", 0,
-    "case", 0,
-    "char", 0,
-    "const", 0,
-    "continue", 0,
-    "default", 0,
-    "unsigned", 0,
-    "void", 0,
-    "volatile", 0,
-    "while", 0
-};
+} keytab[] = {"auto",  0, "break",    0, "case",    0, "char",     0,
+              "const", 0, "continue", 0, "default", 0, "unsigned", 0,
+              "void",  0, "volatile", 0, "while",   0};
 
 int binsearch(char *, struct key *, int);
 
-int main() {
-
-}
+int main() {}
 
 int binsearch(char *word, struct key tab[], int n) {
   int low = 0, high = n - 1;

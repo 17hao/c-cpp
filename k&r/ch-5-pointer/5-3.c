@@ -6,5 +6,5 @@ int main() {
     printf("%c", s[i]);
   }
   printf("%c\n", s[1]);
-  printf("%f\n", (double) (s[1] - '0'));
+  printf("%f\n", (double)(s[1] - '0'));
 }

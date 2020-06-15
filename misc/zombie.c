@@ -1,7 +1,7 @@
-#include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 int main() {
   pid_t pid;
@@ -17,7 +17,8 @@ int main() {
   sleep(5);
 
   pid = wait(&status);
-  fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(), pid, WEXITSTATUS(status));
+  fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(),
+          pid, WEXITSTATUS(status));
 
   exit(0);
 }

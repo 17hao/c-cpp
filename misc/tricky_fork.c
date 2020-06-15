@@ -1,13 +1,13 @@
-#include<unistd.h>
-#include<stdio.h>
-#include<stdlib.h>
-
 /* https://coolshell.cn/articles/7965.html  */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int main() {
   for (int i = 0; i < 2; i++) {
     fork();
-    //printf("-");
+    // printf("-");
     printf("-\n");
   }
 

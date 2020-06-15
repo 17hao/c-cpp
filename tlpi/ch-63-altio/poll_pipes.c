@@ -1,4 +1,5 @@
 #include <sys/poll.h>
+
 #include "../lib/tlpi_hdr.h"
 
 int main(int argc, char *argv[]) {
@@ -11,7 +12,7 @@ int main(int argc, char *argv[]) {
 
   struct pollfd *poll_fd = calloc(num_pipes, sizeof(struct pollfd));
 
-  int (*pfds)[2] = calloc(num_writes, sizeof(int[2]));
+  int(*pfds)[2] = calloc(num_writes, sizeof(int[2]));
 
   if (poll_fd == NULL) {
     printf("calloc\n");
@@ -27,10 +28,11 @@ int main(int argc, char *argv[]) {
   }
 
   /* perform specified number of writes to random pipes */
-  srandom((int) time(NULL));
+  srandom((int)time(NULL));
   for (int i = 0; i < num_writes; i++) {
     int rand_pipe = random() % num_pipes;
-    printf("Writing to fd: %3d (read fd: %3d)\n", pfds[rand_pipe][1], pfds[rand_pipe][0]);
+    printf("Writing to fd: %3d (read fd: %3d)\n", pfds[rand_pipe][1],
+           pfds[rand_pipe][0]);
     if (write(pfds[rand_pipe][1], "a", 1) != -1) {
       printf("write");
       exit(-1);

@@ -1,4 +1,5 @@
 #include <sys/wait.h>
+
 #include "../lib/tlpi_hdr.h"
 #define BUF_SIZE 10
 
@@ -18,7 +19,8 @@ int main(int argc, char *argv[]) {
   }
 
   switch (fork()) {
-    case -1:printf("fork");
+    case -1:
+      printf("fork");
       exit(-1);
     case 0:
       if (close(pfd[1]) == -1) {

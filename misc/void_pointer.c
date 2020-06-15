@@ -5,5 +5,5 @@ int main() {
 
   i = 10086;
 
-  printf("res is: %ld\n", (long) i);
+  printf("res is: %ld\n", (long)i);
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAX_VAL 100
 
-int sp = 0; /* stack position */
+int sp = 0;          /* stack position */
 double val[MAX_VAL]; /* stack items */
 
 void push(double m) {

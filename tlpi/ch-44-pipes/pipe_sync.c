@@ -1,5 +1,6 @@
-#include "../lib/tlpi_hdr.h"
 #include <sys/wait.h>
+
+#include "../lib/tlpi_hdr.h"
 
 int main(int argc, char *argv[]) {
   time_t t;
@@ -21,7 +22,8 @@ int main(int argc, char *argv[]) {
 
   for (int i = 0; i < argc; i++) {
     switch (fork()) {
-      case -1:printf("fork()");
+      case -1:
+        printf("fork()");
         exit(-1);
       case 0:
         if (close(pfd[0]) == -1) {
@@ -30,14 +32,16 @@ int main(int argc, char *argv[]) {
         }
 
         sleep(atoi(argv[i]));
-        printf("%s Child %d (PID=%d) closing pipe\n", cur_time("%T"), i, getpid());
+        printf("%s Child %d (PID=%d) closing pipe\n", cur_time("%T"), i,
+               getpid());
 
         if (close(pfd[1]) == -1) {
           printf("close");
           exit(-1);
         }
         exit(EXIT_SUCCESS);
-      default:break;
+      default:
+        break;
     }
   }
 

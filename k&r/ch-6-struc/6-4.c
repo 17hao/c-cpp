@@ -21,7 +21,7 @@ int main() {
   root.right = &m;
   root.left->left = &m;
   preOrderTraversal(&root);
-//    printf("root's val is: %d\n", root.val);
-//    printf("root'left val is: %d\n", root.left->val);
-//    printf("root'right val is: %d\n", root.right->val);
+  //    printf("root's val is: %d\n", root.val);
+  //    printf("root'left val is: %d\n", root.left->val);
+  //    printf("root'right val is: %d\n", root.right->val);
 }

@@ -1,10 +1,10 @@
-#include <unistd.h>
-#include <time.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/wait.h>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
 
 char *get_cur_time(const char *format) {
   char buf[100];
@@ -29,14 +29,16 @@ int main(int argc, char *argv[]) {
 
   for (int i = 1; i < argc; i++) {
     switch (fork()) {
-      case -1:printf("fork() failed");
+      case -1:
+        printf("fork() failed");
         exit(-1);
       case 0:
         printf("[%s] child %d start with PID %ld, PPID %ld, sleeping %s\n",
-               get_cur_time("%T"), i, (long) getpid(), (long) getppid(), argv[i]);
+               get_cur_time("%T"), i, (long)getpid(), (long)getppid(), argv[i]);
         sleep(atoi(argv[i]));
         _exit(EXIT_SUCCESS);
-      default:break;
+      default:
+        break;
     }
   }
 
@@ -54,6 +56,6 @@ int main(int argc, char *argv[]) {
 
     dead_num++;
     printf("[%s] wait() return child PID %ld (dead_num=%d)\n",
-           get_cur_time("%T"), (long) child_pid, dead_num);
+           get_cur_time("%T"), (long)child_pid, dead_num);
   }
 }

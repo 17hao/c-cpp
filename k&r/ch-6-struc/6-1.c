@@ -10,9 +10,7 @@ struct point makepoint(int x, int y) {
   return temp;
 }
 
-int data(struct point *p) {
-  return p->x;
-}
+int data(struct point *p) { return p->x; }
 
 int main() {
   struct point pt = makepoint(10, 20);

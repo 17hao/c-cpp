@@ -1,4 +1,5 @@
 #include <sys/select.h>
+
 #include "../lib/tlpi_hdr.h"
 
 int main(int argc, char *argv[]) {
@@ -60,11 +61,13 @@ int main(int argc, char *argv[]) {
   printf("ready = %d\n", ready);
 
   for (fd = 0; fd < nfds; fd++) {
-    printf("%d: %s%s\n", fd, FD_ISSET(fd, &read_fds) ? "r" : "", FD_ISSET(fd, &write_fds) ? "w" : "");
+    printf("%d: %s%s\n", fd, FD_ISSET(fd, &read_fds) ? "r" : "",
+           FD_ISSET(fd, &write_fds) ? "w" : "");
   }
 
   if (pto != NULL) {
-    printf("timeout after select() %ld.%03ld\n", (long) timeout.tv_sec, (long) timeout.tv_usec / 1000);
+    printf("timeout after select() %ld.%03ld\n", (long)timeout.tv_sec,
+           (long)timeout.tv_usec / 1000);
   }
 
   exit(EXIT_SUCCESS);
