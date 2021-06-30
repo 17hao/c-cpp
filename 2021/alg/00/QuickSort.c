@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void swap(int* arr, int i, int j) {
 	int tmp = arr[i];
@@ -36,6 +37,8 @@ void sort(int* arr, int len) {
 
 int main() {
 	//int arr[5] = {6,5,2,4,1};
+	//int* arr = (int *) malloc(sizeof(int) * 7);
+	//arr = (int[]){6,5,2,2,2,4,1};
 	int arr[7] = {6,5,2,2,2,4,1};
 	sort(arr, 7);
 	for (int i = 0; i < 7; i++) {
