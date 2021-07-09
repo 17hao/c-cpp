@@ -56,3 +56,5 @@ dkms.conf
 Debug/
 .idea
 cmake-build-debug
+.vscode
+.DS_Store
