@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-  void *i;
+    void *i;
 
-  i = 10086;
+    i = 10086;
 
-  printf("res is: %ld\n", (long)i);
+    printf("res is: %ld\n", (long)i);
 }

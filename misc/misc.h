@@ -1,4 +1,4 @@
 struct point {
-  int x;
-  int y;
+    int x;
+    int y;
 };

@@ -1,7 +1,12 @@
 #include <stdio.h>
 
 int main() {
-  printf("hello, world");
+    int arr[] = {1, 2, 3};
+    for (int i = 0; i < 3; i++) {
+      printf("%d ", arr[i]);
+    }
 
-  printf("hello, world\c");
+    printf("hello, world");
+
+    printf("hello, world\t");
 }
