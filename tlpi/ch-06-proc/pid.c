@@ -1,10 +1,8 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int main() {
-  int pid = getpid();
-  printf("pid: %d\n", pid);
+    printf("pid: %d\n", getpid());
 
-  int ppid = getppid();
-  printf("parent pid: %d\n", ppid);
+    printf("ppid: %d\n", getppid()); // parenr pid
 }

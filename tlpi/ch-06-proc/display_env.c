@@ -4,13 +4,12 @@
  * Display the process environment list.
  */
 
-extern char **environ;
+extern char** environ;
 
 int main() {
-  char **ep;
+    char** ep;
 
-  for (ep = environ; *ep != NULL; ep++) {
-    puts(*ep);
-  }
-
+    for (ep = environ; *ep != NULL; ep++) {
+        puts(*ep);
+    }
 }

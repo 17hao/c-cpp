@@ -13,17 +13,17 @@
  */
 
 void sig_handler(int sig) {
-  printf("\nOuch!\n");
+    printf("\nOuch!\n");
 }
 
 int main() {
-  if (signal(SIGINT, sig_handler) == SIG_ERR) {
-    printf("\nsignal");
-    exit(-1);
-  }
+    if (signal(SIGINT, sig_handler) == SIG_ERR) {
+        printf("\nsignal");
+        exit(-1);
+    }
 
-  for (int i = 0;; i++) {
-    printf("%d\n", i);
-    sleep(3);
-  }
+    for (int i = 0;; i++) {
+        printf("%d\n", i);
+        sleep(3);
+    }
 }

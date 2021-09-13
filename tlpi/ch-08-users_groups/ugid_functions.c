@@ -1,17 +1,17 @@
-#include <stdio.h>
-#include <pwd.h>
 #include <grp.h>
+#include <pwd.h>
+#include <stdio.h>
 
 /**
  * Convert user id to uer name.
  */
-char *username_from_id(uid_t uid) {
-  struct passwd *pwd;
+char* username_from_id(uid_t uid) {
+    struct passwd* pwd;
 
-  pwd = getpwuid(uid);
-  return pwd == NULL ? NULL : pwd->pw_name;
+    pwd = getpwuid(uid);
+    return pwd == NULL ? NULL : pwd->pw_name;
 }
 
 int main() {
-  printf("%s\n", username_from_id(0));
+    printf("%s\n", username_from_id(0));
 }
