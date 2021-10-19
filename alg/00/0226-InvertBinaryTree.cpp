@@ -23,7 +23,7 @@ class Solution {
             printTree(root->right);
         }
     }
-   
+
    private:
     void doInvertTree(struct TreeNode* root) {
         if (root == nullptr) {
