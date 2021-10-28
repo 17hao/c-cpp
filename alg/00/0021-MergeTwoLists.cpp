@@ -2,6 +2,8 @@
 
 #include "ListNodeCpp.h"
 
+using namespace LinkedListUtils;
+
 /**
  * Merge two sorted linked lists
  *

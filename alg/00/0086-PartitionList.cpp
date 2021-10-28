@@ -1,5 +1,7 @@
 #include "ListNodeCpp.h"
 
+using namespace LinkedListUtils;
+
 /**
  * @since 2021-9-10 Friday 15:40
  */
