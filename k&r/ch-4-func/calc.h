@@ -1,6 +1,8 @@
-int getch();
+#define NUMBER 0
 
-void ungetch(int);
+int my_getchar();
+
+void my_ungetchar(int);
 
 int getop(char []);
 

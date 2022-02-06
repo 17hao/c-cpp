@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "calc.h"
 
 #define MAX_VAL 100
 
