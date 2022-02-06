@@ -1,11 +1,26 @@
+#include "6-3.h"
+
+#include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
-struct IPAddress {
-    char* host;
-    int port;
-};
+main() {}
 
-int main() {
-    struct IPAddress localhost = {.host = "localhost", .port = 80};
-    printf("%s:%d", localhost.host, localhost.port);
+/**
+ * find word in tab[0]...tab[n - 1]
+ */
+int binsearch(char* word, struct key tab[], int n) {
+    int low = 0, high = n - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        int cond = strcmp(word, tab[mid].word) < 0;
+        if (cond < 0) {
+            high = mid - 1;
+        } else if (cond > 0) {
+            low = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+    return -1;
 }

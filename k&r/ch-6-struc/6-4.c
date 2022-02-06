@@ -1,29 +1,30 @@
 #include <stdio.h>
+#include <string.h>
 
-typedef struct tn {
-    int val;
-    struct tn *left;
-    struct tn *right;
-} TreeNode;
+#include "6-3.h"
 
-// void preOrderTraversal(struct tn *root) {
-void preOrderTraversal(TreeNode *root) {
-    if (root == NULL)
-        return;
-    printf("%d -> ", root->val);
-    preOrderTraversal(root->left);
-    preOrderTraversal(root->right);
+struct key* binsearch(char* word, struct key* tab, int n);
+
+int main(int argc, char const* argv[]) {
+    /* code */
+    return 0;
 }
 
-int main() {
-    TreeNode root = {1};
-    TreeNode n = {3};
-    TreeNode m = {5};
-    root.left = &n;
-    root.right = &m;
-    root.left->left = &m;
-    preOrderTraversal(&root);
-    //    printf("root's val is: %d\n", root.val);
-    //    printf("root'left val is: %d\n", root.left->val);
-    //    printf("root'right val is: %d\n", root.right->val);
+struct key* binsearch(char* word, struct key* tab, int n) {
+    int cond;
+    struct key* low = &tab[0];
+    struct key* high = &tab[n - 1];
+    struct key* mid;
+
+    while (low <= high) {
+        mid = low + (high - low) / 2;
+        if (cond = strcmp(word, mid->word) < 0) {
+            high = mid - 1;
+        } else if (cond > 0) {
+            low = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+    return NULL;
 }
