@@ -3,18 +3,18 @@
 
 #include "6-3.h"
 
-struct key* binsearch(char* word, struct key* tab, int n);
+struct key *binsearch(char *word, struct key *tab, int n);
 
-int main(int argc, char const* argv[]) {
+int main(int argc, char const *argv[]) {
     /* code */
     return 0;
 }
 
-struct key* binsearch(char* word, struct key* tab, int n) {
+struct key *binsearch(char *word, struct key *tab, int n) {
     int cond;
-    struct key* low = &tab[0];
-    struct key* high = &tab[n - 1];
-    struct key* mid;
+    struct key *low = &tab[0];
+    struct key *high = &tab[n - 1];
+    struct key *mid;
 
     while (low <= high) {
         mid = low + (high - low) / 2;

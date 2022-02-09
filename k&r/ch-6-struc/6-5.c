@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char const* argv[]) {
+int main(int argc, char const *argv[]) {
     /* code */
     return 0;
 }
@@ -12,7 +12,7 @@ int main(int argc, char const* argv[]) {
 /**
  * Add a node with word, at or below root
  */
-struct tnode* addtree(struct tnode* root, char* word) {
+struct tnode *addtree(struct tnode *root, char *word) {
     int cond;
 
     if (root == NULL) {
@@ -30,11 +30,11 @@ struct tnode* addtree(struct tnode* root, char* word) {
     return root;
 }
 
-struct tnode* talloc() {
-    return (struct tnode*)malloc(sizeof(struct tnode));
+struct tnode *talloc() {
+    return (struct tnode *)malloc(sizeof(struct tnode));
 }
 
-void treeprint(struct tnode* root)  {
+void treeprint(struct tnode *root) {
     if (root != NULL) {
         treeprint(root->left);
         printf("%d ", root->word);

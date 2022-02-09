@@ -4,12 +4,13 @@
 #include <stdio.h>
 #include <string.h>
 
-main() {}
+main() {
+}
 
 /**
  * find word in tab[0]...tab[n - 1]
  */
-int binsearch(char* word, struct key tab[], int n) {
+int binsearch(char *word, struct key tab[], int n) {
     int low = 0, high = n - 1;
     while (low <= high) {
         int mid = low + (high - low) / 2;
