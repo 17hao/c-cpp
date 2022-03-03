@@ -1,16 +1,28 @@
+/**
+ * pointers and function arguments
+ */
+
 #include <stdio.h>
 
-void swap(int *x, int *y);
+struct pointer {
+    double x;
+    double y;
+};
 
-int main() {
-    int x = 2;
-    int y = 3;
-    swap(&x, &y);
-    printf("x-y: %d, %d\n", x, y);
+void recover(struct pointer *p) {
+    p->x = 0;
+    p->y = 0;
 }
 
-void swap(int *x, int *y) {
-    int tmp = *x;
-    *x = *y;
-    *y = tmp;
+// void recover(struct pointer p) {
+//     p.x = 0;
+//     p.x = 0;
+// }
+
+int main() {
+    struct pointer p = {1, 2};
+    printf("%f, %f\n", p.x, p.y);
+    recover(&p);
+    // recover(p);
+    printf("%f, %f", p.x, p.y);
 }

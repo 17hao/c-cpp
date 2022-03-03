@@ -5,12 +5,12 @@
  * decalares left to be a pointer to a tnode, not a tnode itself.
  */
 struct tnode {
-    char* word;
+    char *word;
     int count;
-    struct tnode* left;
-    struct tnode* right;
+    struct tnode *left;
+    struct tnode *right;
 };
 
-struct tnode* talloc();
+struct tnode *talloc();
 
-void treeprint(struct tnode* root);
+void treeprint(struct tnode *root);
