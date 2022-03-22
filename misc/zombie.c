@@ -14,7 +14,7 @@ int main() {
         exit(0);
     }
 
-    sleep(5);
+    sleep(10);
 
     pid = wait(&status);
     fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(), pid,

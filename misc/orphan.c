@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 int main() {
@@ -11,7 +12,7 @@ int main() {
         exit(-1);
     }
 
-    if (pid == 0) {
+    if (pid == 0) { // child process
         printf("I'm child process - pid: %d - parent pid: %d\n", getpid(), getppid());
         sleep(5);
         printf("After sleep pid: %d - parent pid: %d\n", getpid(), getppid());
