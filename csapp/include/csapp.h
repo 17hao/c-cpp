@@ -10,6 +10,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define MAXHEAP 1024
+
 extern char **environ; /* Defined by libc */
 
 void unixError(char *msg);
