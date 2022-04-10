@@ -5,7 +5,7 @@
 void readDemo() {
     FILE *f = fopen("./foobar.txt", "r");
     char c;
-    fread(&c, 1, 1, f);
+    fread(&c, sizeof(char), 1, f);
     printf("buffer = %c\n", c);
     long fp = ftell(f);
     printf("file position = %ld\n", fp);
@@ -16,7 +16,7 @@ void writeDemo() {
     FILE *f = fopen("./foobar.txt", "r+");
     fseek(f, 0, SEEK_END);
     char *buf = "\n2022-4-6 23:47\n";
-    int n = fwrite(buf, 1, strlen(buf), f);
+    int n = fwrite(buf, sizeof(char), strlen(buf), f);
     printf("write %d bytes\n", n);
     fclose(f);
 }
