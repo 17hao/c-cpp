@@ -9,7 +9,7 @@ static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
 
 static void *thread_func(void *arg) {
   int loc, j, s;
-  int loops = *((int *) arg);
+  int loops = *((int *)arg);
   for (j = 0; j < loops; j++) {
     s = pthread_mutex_lock(&mtx);
     if (s != 0) {

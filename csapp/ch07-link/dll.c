@@ -3,9 +3,9 @@
   gcc -rdynamic -o prog2r dll.c -ldl
  */
 
+#include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <dlfcn.h>
 
 int x[2] = {1, 2};
 int y[2] = {3, 4};

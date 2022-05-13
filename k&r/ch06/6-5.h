@@ -5,10 +5,10 @@
  * decalares left to be a pointer to a tnode, not a tnode itself.
  */
 struct tnode {
-    char *word;
-    int count;
-    struct tnode *left;
-    struct tnode *right;
+  char *word;
+  int count;
+  struct tnode *left;
+  struct tnode *right;
 };
 
 struct tnode *talloc();

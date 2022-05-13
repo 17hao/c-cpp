@@ -16,11 +16,11 @@ void calculate();
  * 1 2 - 3 4 + * = -7
  */
 int main(int argc, char const *argv[]) {
-    // char *s = "1 2 - 3 4 + *";
-    // // char* s = "2 1 - 3 4 + *";
-    // double res = calculate(s);
-    // printf("result is: %.2f\n", res);
-    calculate();
+  // char *s = "1 2 - 3 4 + *";
+  // // char* s = "2 1 - 3 4 + *";
+  // double res = calculate(s);
+  // printf("result is: %.2f\n", res);
+  calculate();
 }
 
 // double calculate(char* s) {
@@ -55,35 +55,35 @@ int main(int argc, char const *argv[]) {
 // }
 
 void calculate() {
-    int type;
-    double op2;
-    char s[MAXOP];
+  int type;
+  double op2;
+  char s[MAXOP];
 
-    while ((type = getop(s)) != EOF) {
-        switch (type) {
-            case NUMBER:
-                push(atof(s));
-                break;
-            case '+':
-                push(pop() + pop());
-                break;
-            case '-':
-                op2 = pop();
-                push(pop() - op2);
-                break;
-            case '*':
-                push(pop() * pop());
-                break;
-            case '/':
-                op2 = pop();
-                push(pop() / op2);
-                break;
-            case '\n':
-                printf("\t%.8g\n", pop());
-                break;
-            default:
-                printf("error: unknown command: %c.\n", *s);
-                break;
-        }
+  while ((type = getop(s)) != EOF) {
+    switch (type) {
+    case NUMBER:
+      push(atof(s));
+      break;
+    case '+':
+      push(pop() + pop());
+      break;
+    case '-':
+      op2 = pop();
+      push(pop() - op2);
+      break;
+    case '*':
+      push(pop() * pop());
+      break;
+    case '/':
+      op2 = pop();
+      push(pop() / op2);
+      break;
+    case '\n':
+      printf("\t%.8g\n", pop());
+      break;
+    default:
+      printf("error: unknown command: %c.\n", *s);
+      break;
     }
+  }
 }

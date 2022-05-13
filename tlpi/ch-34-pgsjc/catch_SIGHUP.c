@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include <signal.h>
-#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-static void handler(int sig) {}
+static void handler(int sig) {
+}
 
 int main(int argc, char *argv[]) {
   pid_t child_pid;

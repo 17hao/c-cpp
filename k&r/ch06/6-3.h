@@ -2,20 +2,9 @@
  * 结构数组, 类似于int [10]
  */
 struct key {
-    char *word;
-    int count;
-} keytab[] = {
-    "auto", 0,
-    "break", 0, 
-    "case", 0, 
-    "char", 0, 
-    "const", 0, 
-    "continue", 0,
-    "default", 0, 
-    "unsigned", 0, 
-    "void", 0, 
-    "volatile", 0, 
-    "while", 0
-};
+  char *word;
+  int count;
+} keytab[] = {"auto", 0,         "break", 0,          "case", 0,      "char", 0,          "const", 0,       "continue",
+              0,      "default", 0,       "unsigned", 0,      "void", 0,      "volatile", 0,       "while", 0};
 
-int binsearch(char*, struct key*, int);
+int binsearch(char *, struct key *, int);

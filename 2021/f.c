@@ -1,3 +1,3 @@
 int f(int n) {
-    return n * n;
+  return n * n;
 }

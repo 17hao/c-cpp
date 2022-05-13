@@ -4,7 +4,7 @@ int my_getchar();
 
 void my_ungetchar(int);
 
-int getop(char []);
+int getop(char[]);
 
 void push(double);
 

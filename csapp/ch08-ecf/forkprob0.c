@@ -5,12 +5,12 @@
 #include "csapp.h"
 
 int main() {
-    int a = 9;
+  int a = 9;
 
-    if (Fork() == 0) {
-        printf("pid=%d p1: a=%d\n", getpid(), a--);
-    }
+  if (Fork() == 0) {
+    printf("pid=%d p1: a=%d\n", getpid(), a--);
+  }
 
-    printf("pid=%d p2: a=%d\n", getpid(), a++);
-    exit(0);
+  printf("pid=%d p2: a=%d\n", getpid(), a++);
+  exit(0);
 }

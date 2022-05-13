@@ -1,11 +1,11 @@
-#include <sys/un.h>
-#include <sys/socket.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/un.h>
 #include <unistd.h>
 
-#define  SV_SOCK_PATH "/tmp/us_xfr"
+#define SV_SOCK_PATH "/tmp/us_xfr"
 
 #define BUF_SIZE 100
 
@@ -22,7 +22,7 @@ int main() {
   addr.sun_family = AF_UNIX;
   strncpy(addr.sun_path, SV_SOCK_PATH, sizeof(addr.sun_path) - 1);
 
-  if (connect(sfd, (struct sockaddr *) &addr, sizeof(struct sockaddr_un) - 1) == -1) {
+  if (connect(sfd, (struct sockaddr *)&addr, sizeof(struct sockaddr_un) - 1) == -1) {
     printf("connect\n");
     exit(-1);
   }

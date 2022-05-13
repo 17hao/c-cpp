@@ -1,4 +1,4 @@
-/* 
+/*
   compile time
     gcc -I . -o intc int.c mymalloc.o
 
@@ -9,7 +9,7 @@
     gcc -Wl,--wrap,malloc -Wl,--wrap,free -o intc int.o mymalloc.o
 
     1. -Wl passes options to linker. Each comma is replaced with a space.
-    2. --wrap f flag tells linker to resolve references to f as __wrap_f, and to resolve references to 
+    2. --wrap f flag tells linker to resolve references to f as __wrap_f, and to resolve references to
     __real_f as f.
 
   run time
@@ -19,11 +19,11 @@
     first, when it resolves undefined references.
 */
 
-#include <stdio.h>
 #include <malloc.h>
+#include <stdio.h>
 
 int main() {
-    int *p = malloc(32);
-    free(p);
-    return(0);
+  int *p = malloc(32);
+  free(p);
+  return (0);
 }

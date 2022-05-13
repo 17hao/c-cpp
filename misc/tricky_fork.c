@@ -7,23 +7,23 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 int main() {
-    for (int i = 0; i < 2; i++) {
-        fork();
-        // printf("- ");
-        // printf("-\n");
-        // fflush(stdout);
-        printf("ppid=%d, pid=%d, i=%d -\n", getppid(), getpid(), i);
-        // fflush(stdout);
-    }
+  for (int i = 0; i < 2; i++) {
+    fork();
+    // printf("- ");
+    // printf("-\n");
+    // fflush(stdout);
+    printf("ppid=%d, pid=%d, i=%d -\n", getppid(), getpid(), i);
+    // fflush(stdout);
+  }
 
-    // sleep(10); // sleep a while, use pstree|grep tricky to show ps tree
+  // sleep(10); // sleep a while, use pstree|grep tricky to show ps tree
 
-    wait(NULL);
-    wait(NULL);
+  wait(NULL);
+  wait(NULL);
 
-    exit(EXIT_SUCCESS);
+  exit(EXIT_SUCCESS);
 }

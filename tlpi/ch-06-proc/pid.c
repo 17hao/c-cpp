@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 int main() {
-    printf("pid: %d\n", getpid());
+  printf("pid: %d\n", getpid());
 
-    printf("ppid: %d\n", getppid()); // parenr pid
+  printf("ppid: %d\n", getppid()); // parenr pid
 }

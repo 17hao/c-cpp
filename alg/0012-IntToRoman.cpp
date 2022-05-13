@@ -20,86 +20,86 @@
  * @since 2021-9-14 Tuesday 19:44
  */
 class Solution {
-   public:
-    std::string intToRoman(int num) {
-        std::string res = "";
-        while (num != 0) {
-            std::string special = specialNum(&num);
-            if (special.size() > 0) {
-                res.append(special);
-            } else {
-                if (num / 1000 > 0) {
-                    int count = num / 1000;
-                    append(&res, "M", count);
-                    num = num % 1000;
-                } else if (num / 500 > 0) {
-                    int count = num / 500;
-                    append(&res, "D", count);
-                    num = num % 500;
-                } else if (num / 100 > 0) {
-                    int count = num / 100;
-                    append(&res, "C", count);
-                    num = num % 100;
-                } else if (num / 50 > 0) {
-                    int count = num / 50;
-                    append(&res, "L", count);
-                    num = num % 50;
-                } else if (num / 10 > 0) {
-                    int count = num / 10;
-                    append(&res, "X", count);
-                    num = num % 10;
-                } else if (num / 5 > 0) {
-                    int count = num / 5;
-                    append(&res, "V", count);
-                    num = num % 5;
-                } else if (num / 1 > 0) {
-                    int count = num / 1;
-                    append(&res, "I", count);
-                    num = num % 1;
-                }
-            }
+public:
+  std::string intToRoman(int num) {
+    std::string res = "";
+    while (num != 0) {
+      std::string special = specialNum(&num);
+      if (special.size() > 0) {
+        res.append(special);
+      } else {
+        if (num / 1000 > 0) {
+          int count = num / 1000;
+          append(&res, "M", count);
+          num = num % 1000;
+        } else if (num / 500 > 0) {
+          int count = num / 500;
+          append(&res, "D", count);
+          num = num % 500;
+        } else if (num / 100 > 0) {
+          int count = num / 100;
+          append(&res, "C", count);
+          num = num % 100;
+        } else if (num / 50 > 0) {
+          int count = num / 50;
+          append(&res, "L", count);
+          num = num % 50;
+        } else if (num / 10 > 0) {
+          int count = num / 10;
+          append(&res, "X", count);
+          num = num % 10;
+        } else if (num / 5 > 0) {
+          int count = num / 5;
+          append(&res, "V", count);
+          num = num % 5;
+        } else if (num / 1 > 0) {
+          int count = num / 1;
+          append(&res, "I", count);
+          num = num % 1;
         }
-        return res;
+      }
     }
+    return res;
+  }
 
-   private:
-    std::string specialNum(int* num) {
-        if (*num >= 900 && *num < 1000) {
-            *num -= 900;
-            return "CM";
-        } else if (*num >= 400 && *num < 500) {
-            *num -= 400;
-            return "CD";
-        } else if (*num >= 90 && *num < 100) {
-            *num -= 90;
-            return "XC";
-        } else if (*num >= 40 && *num < 50) {
-            *num -= 40;
-            return "XL";
-        } else if (*num >= 9 && *num < 10) {
-            *num -= 9;
-            return "IX";
-        } else if (*num == 4) {
-            *num -= 4;
-            return "IV";
-        } else {
-            return "";
-        }
+private:
+  std::string specialNum(int *num) {
+    if (*num >= 900 && *num < 1000) {
+      *num -= 900;
+      return "CM";
+    } else if (*num >= 400 && *num < 500) {
+      *num -= 400;
+      return "CD";
+    } else if (*num >= 90 && *num < 100) {
+      *num -= 90;
+      return "XC";
+    } else if (*num >= 40 && *num < 50) {
+      *num -= 40;
+      return "XL";
+    } else if (*num >= 9 && *num < 10) {
+      *num -= 9;
+      return "IX";
+    } else if (*num == 4) {
+      *num -= 4;
+      return "IV";
+    } else {
+      return "";
     }
+  }
 
-    void append(std::string* res, std::string append, int count) {
-        for (int i = 0; i < count; i++) {
-            res->append(append);
-        }
+  void append(std::string *res, std::string append, int count) {
+    for (int i = 0; i < count; i++) {
+      res->append(append);
     }
+  }
 };
 
-int main(int argc, char const* argv[]) {
-    Solution s;
-    std::cout << s.intToRoman(1) << "\n";
-    std::cout << s.intToRoman(3) << "\n";
-    std::cout << s.intToRoman(4) << "\n";
-    std::cout << s.intToRoman(9) << "\n";
-    std::cout << s.intToRoman(58) << "\n";
-    std::cout << s.intToRoman(1994) << "\n";
+int main(int argc, char const *argv[]) {
+  Solution s;
+  std::cout << s.intToRoman(1) << "\n";
+  std::cout << s.intToRoman(3) << "\n";
+  std::cout << s.intToRoman(4) << "\n";
+  std::cout << s.intToRoman(9) << "\n";
+  std::cout << s.intToRoman(58) << "\n";
+  std::cout << s.intToRoman(1994) << "\n";
 }

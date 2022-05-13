@@ -4,21 +4,20 @@
 #include <unistd.h>
 
 int main() {
-    pid_t pid;
-    int status;
+  pid_t pid;
+  int status;
 
-    pid = fork();
+  pid = fork();
 
-    if (pid == 0) {
-        printf("child pid: %d\n", getpid());
-        exit(0);
-    }
-
-    sleep(10);
-
-    pid = wait(&status);
-    fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(), pid,
-            WEXITSTATUS(status));
-
+  if (pid == 0) {
+    printf("child pid: %d\n", getpid());
     exit(0);
+  }
+
+  sleep(10);
+
+  pid = wait(&status);
+  fprintf(stdout, "[%d] Child process %d exited with status %d\n", getpid(), pid, WEXITSTATUS(status));
+
+  exit(0);
 }

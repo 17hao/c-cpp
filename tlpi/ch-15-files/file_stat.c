@@ -9,27 +9,27 @@
 static void display_file_state(const struct stat *sb) {
   printf("File type:                 ");
   switch (sb->st_mode & S_IFMT) {
-    case S_IFREG:
-      printf("regular file\n");
-      break;
-    case S_IFDIR:
-      printf("directory\n");
-      break;
-    case S_IFBLK:
-      printf("block device\n");
-      break;
-    case S_IFCHR:
-      printf("character device\n");
-      break;
-    case S_IFSOCK:
-      printf("socket\n");
-      break;
-    case S_IFLNK:
-      printf("symbolic link\n");
-      break;
-    default:
-      printf("unknown file type?\n");
-      break;
+  case S_IFREG:
+    printf("regular file\n");
+    break;
+  case S_IFDIR:
+    printf("directory\n");
+    break;
+  case S_IFBLK:
+    printf("block device\n");
+    break;
+  case S_IFCHR:
+    printf("character device\n");
+    break;
+  case S_IFSOCK:
+    printf("socket\n");
+    break;
+  case S_IFLNK:
+    printf("symbolic link\n");
+    break;
+  default:
+    printf("unknown file type?\n");
+    break;
   }
 
   //    printf("Device contains i-node:    major=%ld minor=%ld\n",
@@ -42,8 +42,7 @@ static void display_file_state(const struct stat *sb) {
 
   printf("Number of (hard) links:    %ld\n", (long)sb->st_nlink);
 
-  printf("Ownership:                 UID=%ld GID=%ld\n", (long)sb->st_uid,
-         (long)sb->st_gid);
+  printf("Ownership:                 UID=%ld GID=%ld\n", (long)sb->st_uid, (long)sb->st_gid);
 
   printf("File size:                 %lld bytes\n", (long long)sb->st_size);
 
@@ -67,9 +66,11 @@ int main(int argc, char *argv[]) {
   fname = state_link ? 2 : 1;
 
   if (state_link) {
-    if (lstat(argv[fname], &sb) == -1) exit(-1);
+    if (lstat(argv[fname], &sb) == -1)
+      exit(-1);
   } else {
-    if (stat(argv[fname], &sb) == -1) exit(-1);
+    if (stat(argv[fname], &sb) == -1)
+      exit(-1);
   }
 
   display_file_state(&sb);

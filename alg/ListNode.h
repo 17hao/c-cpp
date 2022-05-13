@@ -1,4 +1,4 @@
 struct ListNode {
-	struct ListNode* next;
-	int val;
+  struct ListNode *next;
+  int val;
 };

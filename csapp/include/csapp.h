@@ -26,10 +26,10 @@ pid_t Fork();
 #define MAXLINE 8192
 #define RIO_BUFSIZE 8192
 typedef struct {
-    int rio_fd;                // Descriptor for this internal buffer
-    int rio_cnt;               // Unread bytes in internal buf
-    char *rio_bufptr;          // Next unread byte in internal buffer
-    char rio_buf[RIO_BUFSIZE]; // Internal buffer
+  int rio_fd;                // Descriptor for this internal buffer
+  int rio_cnt;               // Unread bytes in internal buf
+  char *rio_bufptr;          // Next unread byte in internal buffer
+  char rio_buf[RIO_BUFSIZE]; // Internal buffer
 } rio_t;
 
 //====== unbuffered input and output ======

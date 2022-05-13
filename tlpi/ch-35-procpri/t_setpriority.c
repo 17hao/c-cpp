@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <sys/resource.h>
-#include <string.h>
-#include <stdlib.h>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/resource.h>
 
 int main(int argc, char *argv[]) {
   int which, prio;
@@ -10,7 +10,8 @@ int main(int argc, char *argv[]) {
 
   if (argc != 4 || strchr("pgu", argv[1][0]) == NULL) {
     printf("%s {p|g|u} who priority\n"
-           "set priority of: p=process; g=process group; u=process for user\n", argv[0]);
+           "set priority of: p=process; g=process group; u=process for user\n",
+           argv[0]);
     exit(-1);
   }
 

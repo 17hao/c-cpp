@@ -1,13 +1,13 @@
+#include "../lib/tlpi_hdr.h"
+#include "file_perms.h"
 #include <fcntl.h>
-#include <sys/stat.h>
 #include <stdlib.h>
 #include <string.h>
-#include "file_perms.h"
-#include "../lib/tlpi_hdr.h"
+#include <sys/stat.h>
 
-#define FILE_PERM (S_IRUSR | S_IWUSR | S_IRGRP  | S_IWGRP)
+#define FILE_PERM (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
 #define DIR_PERM (S_IRWXU | S_IRWXG | S_IRWXO)
-#define  UMASK_SETTING (S_IWGRP | S_IXGRP | S_IWOTH | S_IXOTH)
+#define UMASK_SETTING (S_IWGRP | S_IXGRP | S_IWOTH | S_IXOTH)
 
 /**
  * gcc umask.c file_perms.c
@@ -17,8 +17,8 @@ int main(int argc, char *argv[]) {
   struct stat sb;
   mode_t u;
 
-  if (strcmp(argv[1], "-d") != 0 && (argc < 2 || argc > 3 || strcmp(argv[1], "--help") == 0 ||
-      strcmp(argv[1], "-h") == 0 || argv[1][0] == '-')) {
+  if (strcmp(argv[1], "-d") != 0 &&
+      (argc < 2 || argc > 3 || strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0 || argv[1][0] == '-')) {
     printf("usage: umask [-d] [file | directory]\n");
     exit(-1);
   }

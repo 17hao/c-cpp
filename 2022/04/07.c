@@ -12,16 +12,16 @@
  *   4. the program exits
  */
 void readFromStdinV1() {
-    char *line = malloc(LINE_SIZE * sizeof(char));
-    while (1) {
-        fread(line, sizeof(char), LINE_SIZE, stdin);
+  char *line = malloc(LINE_SIZE * sizeof(char));
+  while (1) {
+    fread(line, sizeof(char), LINE_SIZE, stdin);
 
-        fflush(stdout);
-        fwrite(line, sizeof(char), LINE_SIZE, stdout);
+    fflush(stdout);
+    fwrite(line, sizeof(char), LINE_SIZE, stdout);
 
-        printf("%s\n", line);
-        // exit(0);
-    }
+    printf("%s\n", line);
+    // exit(0);
+  }
 }
 
 /**
@@ -30,14 +30,14 @@ void readFromStdinV1() {
  *    any newline that might or might not present.
  */
 void readFromStdinV2() {
-    char *buf = malloc(LINE_SIZE * sizeof(char));
-    while (1) {
-        fgets(buf, LINE_SIZE, stdin);
-        printf("%s\n", buf);
-    }
+  char *buf = malloc(LINE_SIZE * sizeof(char));
+  while (1) {
+    fgets(buf, LINE_SIZE, stdin);
+    printf("%s\n", buf);
+  }
 }
 
 int main() {
-    // readFromStdinV1();
-    readFromStdinV2();
+  // readFromStdinV1();
+  readFromStdinV2();
 }

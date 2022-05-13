@@ -1,13 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
 #include <string.h>
+#include <time.h>
+#include <unistd.h>
 
-typedef enum {
-  TRUE,
-  FALSE
-} Boolean;
+typedef enum { TRUE, FALSE } Boolean;
 
 char *cur_time(const char *format) {
   char buf[100];
