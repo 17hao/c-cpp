@@ -37,7 +37,8 @@ void decimalToBinary(char *num, int len) {
 
 void binaryToHex(char *num, int len) {
   int size = len % 4 == 0 ? len / 4 : len / 4 + 1;
-  char *res = malloc(size * sizeof(char));
+  char *res = malloc((size + 1) * sizeof(char));
+  res[size] = '\0';
   int i = len - 1;
   for (; i >= 0; i -= 4) {
     int sum = 0;
@@ -61,6 +62,10 @@ void hexToBinary(char *num, int len) {
       n = num[i] - '0';
     } else {
       n = num[i] - 'A' + 10;
+    }
+    if (n == 0) {
+      printf("%s", "0000");
+      continue;
     }
     char *buf = malloc(4 * sizeof(char));
     int idx = 0;
