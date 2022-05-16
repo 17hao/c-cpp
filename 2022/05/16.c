@@ -3,10 +3,12 @@
 #include <stdlib.h>
 
 /*
- git clone https://github.com/redis/hiredis.git
- make
- make install
- gcc xx.c -I/usr/local/include/hiredis -lhiredis
+ 1. git clone https://github.com/redis/hiredis.git
+ 2. make
+ 3. make install
+ 4. check /etc/ld.so.conf file, ldconfig
+ 5. gcc xx.c -I/usr/local/include/hiredis -lhiredis
+
  '-lhiredis' means libhiredis.a
 */
 int main(int argc, char **argv) {
