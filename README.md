@@ -1,4 +1,4 @@
-将conf目录下的配置文件放入.vscode目录，即可用debug C/C++代码。
+将conf目录下的配置文件放入.vscode目录，即可在vscode中debug C/C++代码。
 
 launch.json中configurations->preLaunchTask名称为tasks.json中每个task的label
 
